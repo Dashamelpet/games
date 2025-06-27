@@ -73,10 +73,13 @@
   fill: var(--color--white);
 }
 .main {
-  padding: 50px 30px;
+  padding: 50px 30px 40px;
   background-color: rgba(250, 250, 250, 1);
   border-top-left-radius: 40px;
   border-bottom-left-radius: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 .page-menu {
   display: flex;
@@ -85,6 +88,7 @@
   font-family: 'Rubik-Medium';
   font-size: 17px;
   line-height: 22px;
+  flex: 0 22px;
 }
 .page-menu__item {
   white-space: nowrap;
@@ -96,13 +100,13 @@
   color: var(--color-blue);
 }
 .banner {
-  padding: 64px 30px;
   background-image: url(../images/banner.png);
   background-repeat: no-repeat;
   background-size: cover;
-  height: 300px;
+  height: 32.12%;
   width: 100%;
   border-radius: 14px;
+  position: relative;
 }
 .title {
   font-family: 'Rubik-SemiBold';
@@ -110,15 +114,28 @@
   line-height: 48px;
   color: var(--color--white);
   max-width: 57%;
+  position: absolute;
+  top: 22%;
+  left: 30px;
 }
 .banner__btn {
   padding: 15px 30px;
+  position: absolute;
+  left: 30px;
+  bottom: 22%;
+}
+.btn-main {
   background-color: var(--color-orange);
   color: var(--color--white);
   border-radius: 8px;
   font-family: 'Rubik-Medium';
   font-size: 17px;
   line-height: 25px;
+  transition: all 0.3s;
+}
+.btn-main:hover {
+  background-color: var(--color--white);
+  color: var(--color-blue);
 }
 .section__title {
   font-family: 'Rubik-SemiBold';
@@ -126,6 +143,7 @@
   line-height: 25px;
   margin-bottom: 25px;
 }
+
 .gradient {
   position: absolute;
   background: linear-gradient(
@@ -141,10 +159,16 @@
   left: 0;
   z-index: 1;
 }
+.popular-games {
+  height: 32.12%;
+}
+.popularGamesSwiper {
+  height: calc(100% - 50px);
+}
 .popular-games__item {
   background-color: transparent;
   border-radius: 16px;
-  height: 250px;
+  height: 100%;
   position: relative;
   width: calc((100% - (20px * 4)) / 4.3);
 }
@@ -186,6 +210,9 @@
   height: 12px;
   display: block;
 }
+.new-games {
+  flex: 0 24.63%;
+}
 .new-games__list.swiper-wrapper {
   display: grid;
   grid-auto-flow: column;
@@ -202,7 +229,7 @@
   background-color: var(--color--white);
   box-shadow: 0px 2px 8px 0px rgba(202, 205, 219, 0.42);
 }
-.new-games__img {
+.game-img {
   width: 71px;
   height: 62px;
   object-fit: cover;
@@ -223,30 +250,31 @@
   text-align: left;
   padding-left: 4px;
 }
-.new-games__item-title {
+.game-title,
+.user-name {
   font-size: 15px;
   line-height: 100%;
   font-family: 'Rubik-Medium';
   color: rgba(34, 40, 60, 1);
 }
-.new-games__item-category {
+.game-category {
   font-family: 'Poppins-Medium';
   font-size: 12px;
   line-height: 10px;
   padding: 6px 0 8px;
   color: var(--color-gray);
 }
-.new-games__item-rating {
+.games__item-rating {
   position: relative;
   display: flex;
-  gap: 2px;
+  gap: 4px;
   align-items: center;
 }
 .game-rating__value {
   font-size: 12px;
   line-height: 100%;
   color: rgba(34, 40, 60, 1);
-  font-family: 'Oxanium-Medium';
+  font-family: 'Roboto-Regular';
 }
 .game-rating__stars {
   width: 81px;
@@ -271,19 +299,182 @@
   height: 13px;
   flex-shrink: 0;
 }
+.recommend {
+  padding: 50px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.recommend__games {
+  height: 36.14%;
+}
+.user-info {
+  display: flex;
+  justify-content: space-between;
+  flex: 0 40px;
+}
+.user-info__inner {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+.user-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
 
-.rating-5 {
+.live-game__list {
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 50px);
+  justify-content: space-between;
+  overflow-y: scroll;
+  gap: 15px;
+}
+.live-game__item {
+  flex: 0 21.16%;
+  display: flex;
+  gap: 10px;
+  background-color: transparent;
+  align-items: center;
+  justify-content: start;
+  text-align: left;
+}
+.live-game__item-img {
+  box-shadow: 0px 2px 4px 0px rgba(162, 163, 164, 0.8);
+}
+.notifications {
+  margin-right: 20px;
+  transition: transform 0.2s ease-in-out;
+  cursor: pointer;
+}
+.notifications:hover {
+  animation: ring 0.6s ease-in-out;
+}
+@keyframes ring {
+  0% {
+    transform: rotate(0);
+  }
+  15% {
+    transform: rotate(-15deg);
+  }
+  30% {
+    transform: rotate(15deg);
+  }
+  45% {
+    transform: rotate(-10deg);
+  }
+  60% {
+    transform: rotate(10deg);
+  }
+  75% {
+    transform: rotate(-5deg);
+  }
+  90% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+.game-info {
   width: 100%;
+  flex: 0 48.8%;
 }
-.rating-4-5 {
-  width: 92%;
+.game-info__img {
+  width: 100%;
+  border-radius: 12px;
+  height: 48.33%;
+  object-fit: cover;
+  margin-bottom: 20px;
 }
-.rating-4 {
-  width: 80%;
+
+.game-info-title {
+  font-family: 'Rubik-Medium';
+  font-size: 28px;
+  line-height: 22px;
+  color: rgba(34, 40, 60, 1);
 }
-.rating-3-5 {
-  width: 70%;
+.game-info-category {
+  font-family: 'Poppins-Medium';
+  font-size: 15px;
+  line-height: 18px;
+  padding: 5px 0;
+  color: var(--color-gray);
 }
-.rating-3 {
-  width: 60%;
+.game-info__desc {
+  font-family: 'Roboto-Regular';
+  color: var(--color-gray);
+  font-size: 14px;
+  line-height: 20px;
+  margin: 10px 0 30px;
+}
+.game-info__btn {
+  padding: 15px 0;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* height */
+
+@media (max-height: 1000px) {
+  .main {
+    padding: 20px 30px 20px;
+    height: 100vh;
+  }
+  .recommend {
+    padding: 20px 10px;
+  }
+  .user-panel {
+    padding-top: 20px;
+  }
+}
+@media (max-height: 950px) {
+  .banner__btn {
+    bottom: 6%;
+  }
+  .game-info__desc {
+    margin: 10px 10px;
+  }
+  .game-info__img {
+    margin-bottom: 10px;
+  }
+  .section__title {
+    margin-bottom: 10px;
+  }
+  .main,
+  .recommend {
+    gap: 10px;
+  }
+}
+
+/* width */
+@media (max-width: 1350px) {
+  .title {
+    top: 10%;
+  }
+}
+@media (max-width: 1200px) {
+  .title {
+    line-height: 1;
+    font-size: 30px;
+  }
+  .popular-games__item {
+    width: calc((100% - (20px * 4)) / 3.3);
+  }
+}
+@media (max-width: 950px) {
+  .user-name {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .popular-games__item {
+    width: calc((100% - (20px * 4)) / 2.3);
+  }
+  .banner {
+    background-position: 62%;
+  }
 }
