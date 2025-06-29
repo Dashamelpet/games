@@ -304,14 +304,16 @@
   display: flex;
   flex-direction: column;
   gap: 30px;
+  height: 100vh;
 }
 .recommend__games {
-  height: 36.14%;
+  max-height: 37.14%;
 }
 .user-info {
   display: flex;
   justify-content: space-between;
   flex: 0 40px;
+  align-items: center;
 }
 .user-info__inner {
   display: flex;
@@ -330,6 +332,7 @@
   height: calc(100% - 50px);
   justify-content: space-between;
   overflow-y: scroll;
+  scrollbar-width: none;
   gap: 15px;
 }
 .live-game__item {
@@ -428,6 +431,7 @@
   }
   .user-panel {
     padding-top: 20px;
+    gap: 50px;
   }
 }
 @media (max-height: 950px) {
@@ -447,9 +451,26 @@
   .recommend {
     gap: 10px;
   }
+  .game-info__desc {
+    margin: 10px 0;
+  }
+}
+@media (max-height: 800px) {
+  .game-info__img {
+    height: 35%;
+  }
+  .section__title,
+  .game-info-title {
+    font-size: 20px;
+    line-height: 100%;
+  }
+}
+
+@media (max-height: 700px) {
 }
 
 /* width */
+
 @media (max-width: 1350px) {
   .title {
     top: 10%;
@@ -463,10 +484,30 @@
   .popular-games__item {
     width: calc((100% - (20px * 4)) / 3.3);
   }
+  .game-info__img {
+    height: 35%;
+  }
+  .popular-games__title {
+    font-size: 18px;
+  }
+  .game-img {
+    width: 32%;
+  }
 }
 @media (max-width: 950px) {
   .user-name {
     display: none;
+  }
+  .section__title,
+  .game-info-title {
+    font-size: 20px;
+    line-height: 100%;
+  }
+  .game-info__desc {
+    margin: 10px 0;
+    height: 70px;
+    overflow-y: scroll;
+    scrollbar-width: none;
   }
 }
 
@@ -477,4 +518,275 @@
   .banner {
     background-position: 62%;
   }
+  .page-menu {
+    gap: 20px;
+  }
 }
+@media (max-width: 768px) {
+  .page-menu {
+    overflow-x: scroll;
+    scrollbar-width: none;
+    overflow-y: hidden;
+    line-height: 100%;
+    padding-bottom: 5px;
+    font-size: 15px;
+  }
+  .btn-main {
+    font-size: 14px;
+    line-height: 100%;
+  }
+  .title {
+    max-width: 100%;
+  }
+}
+@media (max-width: 550px) {
+  .body__wrapper {
+    position: relative;
+    grid-template-columns: minmax(60px, 9%) minmax(250px, 80%);
+  }
+  .recommend {
+    position: fixed;
+    transform: translateX(105%);
+    transition: all 0.3s;
+    background-color: var(--color--white);
+    z-index: 2;
+    width: calc(100% - 60px);
+    height: 100vh;
+  }
+  .recommend:hover {
+    transform: translateX(20%);
+  }
+  .game-info {
+    padding-right: 10px;
+  }
+  .popular-games__item {
+    width: calc((100% - (20px * 4)));
+  }
+  .user-logo {
+    width: 30px;
+    height: 30px;
+  }
+  .title {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 820px) and (max-height: 1180px) and (orientation: landscape) {
+  .menu {
+    gap: 10px;
+  }
+  .title {
+    font-size: 20px;
+    left: 10px;
+  }
+  .banner__btn {
+    left: 10px;
+  }
+  .recommend__games {
+    max-height: 22.14%;
+  }
+}
+@media (max-width: 1024px) and (max-height: 600px) and (orientation: landscape) {
+  .title {
+    max-width: 100%;
+  }
+  .user-panel {
+    gap: 50px;
+  }
+  .recommend__games {
+    max-height: 22.14%;
+  }
+}
+@media (max-height: 650px) {
+  .title {
+    font-size: 30px;
+    max-width: 100%;
+    top: 10%;
+  }
+  .new-games__list.swiper-wrapper {
+    grid-template-rows: 1fr;
+  }
+  .user-panel {
+    gap: 30px;
+  }
+  .menu {
+    gap: 10px;
+  }
+  .popular-games {
+    height: 25%;
+    flex: 1 25%;
+  }
+  .main,
+  .recommend {
+    gap: 0;
+  }
+  .main {
+    padding: 10px 30px 10px;
+  }
+  .recommend__games {
+    max-height: 30%;
+  }
+  .popular-games__title {
+    font-size: 14px;
+    line-height: 100%;
+    left: 10px;
+    bottom: 38px;
+  }
+  .popular-games__info {
+    bottom: 5px;
+    left: 10px;
+    font-size: 12px;
+  }
+  .btn-main {
+    font-size: 14px;
+    line-height: 100%;
+  }
+  .game-info__btn,
+  .banner__btn {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .game-info__desc {
+    margin: 10px 0 10px;
+    max-height: 70px;
+    height: 8%;
+    overflow-y: scroll;
+    scrollbar-width: none;
+  }
+  .game-info-category {
+    line-height: 100%;
+  }
+  .game-info {
+    height: 50%;
+  }
+}
+
+@media (max-height: 450px) {
+  .menu__item {
+    width: 40px;
+    height: 40px;
+  }
+  .title {
+    font-size: 20px;
+  }
+  .section__title,
+  .game-info-title {
+    font-size: 16px;
+  }
+  .game-info__img {
+    height: 25%;
+  }
+  .popular-games__item {
+    width: calc((100% - (20px * 4)) / 4.3);
+  }
+  .banner {
+    height: 25%;
+  }
+}
+
+/* ! попытка 2 */
+
+/* @media (min-width: 1024px) and (max-width: 1280px) {
+  .popular-games__title {
+    font-size: 18px;
+  }
+  .title {
+    font-size: 30px;
+    max-width: 100%;
+    top: 10%;
+  }
+}
+
+@media (min-width: 1025px) and (max-height: 910px) and (orientation: landscape) {
+  
+    
+  .game-info__img {
+    height: auto;
+    max-height: 32%;
+  }
+  .game-info__desc {
+    margin: 10px 0 10px;
+    max-height: 70px;
+    height: 8%;
+    overflow-y: scroll;
+    scrollbar-width: none;
+  }
+  .recommend {
+    padding: 10px 10px;
+  }
+  .game-info-title {
+    font-size: 18px;
+  }
+  .game-info__img {
+    margin-bottom: 10px;
+  }
+  .banner__btn,
+  .game-info__btn {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .section__title {
+    font-size: 18px;
+  }
+  .main {
+    gap: 10px;
+    padding: 10px 30px 10px;
+  }
+  .user-panel {
+    padding-top: 10px;
+  }
+}
+@media (max-width: 1024px) {
+  .page-menu {
+    overflow: scroll;
+    scrollbar-width: none;
+  }
+  .title {
+    font-size: 30px;
+    max-width: 100%;
+    top: 10%;
+    left: 30px;
+  }
+} */
+
+/*  Низкие ноутбуки или планшеты */
+/* @media (max-width: 1024px) and (max-height: 700px) {
+} */
+/*  Планшеты (портрет) */
+/* @media (min-width: 768px) and (max-width: 1024px) {
+  .banner {
+    background-position: 33%;
+  }
+  .popular-games__item {
+    width: calc((100% - (20px * 4)) / 2.3);
+  }
+  .popular-games__title {
+    font-size: 18px;
+  }
+  .game-info__img {
+    height: 30%;
+  }
+  .game-img {
+    width: 32%;
+  }
+  .section__title {
+    font-size: 18px;
+  }
+  .main {
+    gap: 10px;
+  }
+  .user-logo {
+    width: 30px;
+    height: 30px;
+  }
+  .banner__btn {
+    bottom: 15%;
+  }
+} */
+/*  Все телефоны */
+/* @media (max-width: 767px) {
+} */
+
+/* Самые маленькие телефоны с низкой высотой */
+/* @media (max-width: 767px) and (max-height: 700px) {
+} */
